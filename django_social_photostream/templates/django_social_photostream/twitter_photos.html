@@ -1,0 +1,5 @@
+{% for photo in photos %}
+    <a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ media_url }}{{ photo.photo }}" data-caption="{{ photo.caption }}">
+        <img src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ media_url }}{{ photo.photo }}" alt="Photo" width="150" height="150">
+    </a>
+{% endfor %}
