@@ -1,5 +1,8 @@
-{% for photo in photos %}
-    <a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ media_url }}{{ photo.photo }}" data-caption="{{ photo.caption }}">
-        <img src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ media_url }}{{ photo.photo }}" alt="Photo" width="150" height="150">
-    </a>
-{% endfor %}
+
+<div class="row">
+    {% for photo in photos %}
+        <a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ media_url }}{{ photo.photo }}" data-toggle="lightbox" data-title="{{ photo.caption }}" data-gallery="twitter-galery" class="col-md-2 col-sm-4 col-xs-4">
+            <img src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ media_url }}{{ photo.photo }}" class="img-fluid img-thumbnail rounded">
+        </a>
+    {% endfor %}
+</div>
