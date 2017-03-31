@@ -1,0 +1,19 @@
+.twitter-gallery {
+  width: 100%;
+  float: left;
+}
+
+.twitter-gallery img {
+  width: 100%;
+}
+
+.twitter-gallery figure {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 150px;
+}
+
+.twitter-gallery figcaption {
+  display: none;
+}
