@@ -35,7 +35,24 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
             if(figureEl.children.length > 1) {
                 // <figcaption> content
-                item.title = figureEl.children[1].innerHTML; 
+                // item.title = figureEl.children[1].innerHTML;
+                // splited = item.title.split('https://t.co')
+                // if (typeof splited[1] == 'undefined'){
+                //     item.title = figureEl.children[1].innerHTML;
+                // }else {
+                //     item.title = splited[0] + ' <a href="https://t.co'+ splited[1] +'">https://t.co'+splited[1]+'</a>';
+                // }
+                var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+                var regex = new RegExp(expression);
+
+                var splited_text = figureEl.children[1].innerHTML.split(' ');
+                for (var k = 0; k < splited_text.length; k++){
+                    console.log(i, splited_text.length)
+                    if (splited_text[k].match(regex)) {
+                        splited_text[k] = '<a href="'+splited_text[k]+'">'+splited_text[k]+'</a>'
+                    }
+                }
+                item.title = splited_text.join(" ")
             }
 
             if(linkEl.children.length > 0) {
