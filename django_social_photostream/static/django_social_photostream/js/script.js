@@ -47,7 +47,6 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
                 var splited_text = figureEl.children[1].innerHTML.split(' ');
                 for (var k = 0; k < splited_text.length; k++){
-                    console.log(i, splited_text.length)
                     if (splited_text[k].match(regex)) {
                         splited_text[k] = '<a href="'+splited_text[k]+'">'+splited_text[k]+'</a>'
                     }
