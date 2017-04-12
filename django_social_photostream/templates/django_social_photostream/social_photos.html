@@ -1,12 +1,12 @@
-
-<div class="twitter-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    {% for photo in photos %}
+{% if data and data.photos %}
+    <div class="social-gallery-feed {{ data.from_site }}-social-gallery-feed" itemscope itemtype="http://schema.org/ImageGallery">
+        {% for photo in data.photos %}
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
             <a href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ media_url }}{{ photo.photo }}" data-size="{{ photo.photo_width }}x{{ photo.photo_height }}" itemprop="contentUrl">
                 <img src="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ media_url }}{{ photo.photo }}" width="150" height="150" itemprop="thumbnail"/>
             </a>
             <figcaption itemprop="caption description">{{ photo.caption }}</figcaption>
         </figure>
-    {% endfor %}
-</div>
-
+        {% endfor %}
+    </div>
+{% endif %}

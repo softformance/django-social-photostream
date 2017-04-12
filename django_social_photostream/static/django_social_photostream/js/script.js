@@ -218,4 +218,4 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 };
 
 // execute above function
-initPhotoSwipeFromDOM('.twitter-gallery');
+initPhotoSwipeFromDOM('.social-gallery-feed');

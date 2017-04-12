@@ -1,19 +1,19 @@
-.twitter-gallery {
+.social-gallery-feed {
   width: 100%;
   float: left;
 }
 
-.twitter-gallery img {
+.social-gallery-feed img {
   width: 100%;
 }
 
-.twitter-gallery figure {
+.social-gallery-feed figure {
   display: block;
   float: left;
   margin: 0 5px 5px 0;
   width: 150px;
 }
 
-.twitter-gallery figcaption {
+.social-gallery-feed figcaption {
   display: none;
 }
