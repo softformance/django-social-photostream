@@ -4,10 +4,10 @@ from django_social_photostream import app_settings
 from django.urls import reverse
 
 register = template.Library()
-URL_GRAB = app_settings.FACEBOOK_BASE_URL + reverse('facebook-feed:get-posts')
+URL_GRAB = app_settings.INSTAGRAM_BASE_URL + reverse('instagram-feed:get-posts')
 
 @register.inclusion_tag('django_social_photostream/social_photos.html', takes_context=True)
-def facebook_photostream(context, tags, app_id=app_settings.FACEBOOK_APP_ID, count=None, order_by=None):
+def instagram_photostream(context, tags, app_id=app_settings.INSTAGRAM_APP_ID, count=None, order_by=None):
     """
     {% facebook_photostream app_id=1 tags='testtag, anothertag' %}
     """
