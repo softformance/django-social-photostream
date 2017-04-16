@@ -25,33 +25,43 @@ Install Django social photostream::
 
     pip install django-social-photostream
 
+Install Django social photostrean from GitHub::
+
+    virtualenv photostream
+    source photostream/bin/activate
+    pip install -e git+https://github.com/softformance/django-social-photostream.git#egg=django-social-photostream
+
 Add it to your `INSTALLED_APPS`:
 
 .. code-block:: python
 
     INSTALLED_APPS = (
         ...
-        'django_social_photostream.apps.DjangoSocialPhotostreamConfig',
+        'django_social_photostream',
         ...
     )
 
-Add Django social photostream's URL patterns:
+Add needed constants to ``settings.py``:
 
 .. code-block:: python
 
-    from django_social_photostream import urls as django_social_photostream_urls
+    # Twitter settings
+    TWITTER_BASE_URL = 'http://www.MyWebSite.com' # in dev environments default localhost:8001
+    TWITTER_APP_ID = 1 # From which Twitter app sync photos. 
 
+    # Facebook settings
+    FACEBOOK_BASE_URL = 'http://www.MyWebSite.com' # in dev environments default localhost:8001
+    FACEBOOK_APP_ID = 1 # From which Facebook app sync photos. 
 
-    urlpatterns = [
-        ...
-        url(r'^', include(django_social_photostream_urls)),
-        ...
-    ]
+    # Instagram settings
+    INSTAGRAM_BASE_URL = 'http://www.MyWebSite.com' # in dev environments default localhost:8001
+    INSTAGRAM_APP_ID = 1 # From which Instagram app sync photos.
+
 
 Features
 --------
 
-* TODO
+* Show the photos from your ``django-{{social-name-site}}-photo-api`` package. 
 
 Running Tests
 -------------

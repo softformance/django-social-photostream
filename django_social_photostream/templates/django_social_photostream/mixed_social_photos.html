@@ -1,4 +1,4 @@
-<div class="social-gallery-feed {{ social_site }}-social-gallery-feed" itemscope itemtype="http://schema.org/ImageGallery">
+<div class="social-gallery-feed mixed-social-gallery-feed" itemscope itemtype="http://schema.org/ImageGallery">
     {% for site_name, value in data.items %}
         {% for photo in value.photos %}
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
